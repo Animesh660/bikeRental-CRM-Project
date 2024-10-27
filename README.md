@@ -28,37 +28,7 @@ The project aims to achieve the following business goals:
 ## Apex Code
 
 ### Schedulable Class for Payment Reminder
-```java
-public class RemindUnpaidBookings implements Schedulable {
-    public void execute(SchedulableContext sc) {
-        Date targetDate = Date.today().addDays(-3);
-        List<Bike_Booking__c> unpaidBookings = [
-            SELECT Id, Booking_ID__c, Customer_ID__r.Email__c, Customer_ID__r.Name, Payment_Status__c, End_Date__c
-            FROM Bike_Booking__c
-            WHERE End_Date__c <= :targetDate
-              AND Payment_Status__c != 'Paid'
-              AND Customer_ID__r.Email__c != null
-        ];
 
-        List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
-        for (Bike_Booking__c booking : unpaidBookings) {
-            Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
-            email.setToAddresses(new String[] { booking.Customer_ID__r.Email__c });
-            email.setSubject('Payment Reminder for Your Bike Rental Booking #' + booking.Booking_ID__c);
-            String body = 'Dear ' + booking.Customer_ID__r.Name + ',\n\n' +
-                          'We hope you enjoyed your recent bike rental with us. Our records indicate that the payment for your booking #' + 
-                          booking.Booking_ID__c + ' has not been received yet.\n\n' +
-                          'Please make the payment at your earliest convenience to avoid any late fees or penalties.\n\n' +
-                          'Thank you for choosing our services!\n\nBest regards,\nYour Bike Rental Team';
-            email.setPlainTextBody(body);
-            emails.add(email);
-        }
-        
-        if (!emails.isEmpty()) {
-            Messaging.sendEmail(emails);
-        }
-    }
-}
 ## **Documentation**
 
 For a detailed description of the project, including objectives, key features, and testing, refer to the project documentation:
