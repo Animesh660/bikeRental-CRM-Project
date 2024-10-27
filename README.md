@@ -1,4 +1,4 @@
-# bikeRental-CRM-Project
+
 # Bike Rental CRM Project
 
 This project is a **Bike Rental CRM** application developed using Salesforce to streamline and automate the bike rental process. The application includes features for managing customers, bike bookings, billing, and automated reminders for overdue payments, providing an efficient solution for bike rental businesses.
