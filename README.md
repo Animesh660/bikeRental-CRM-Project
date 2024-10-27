@@ -28,6 +28,39 @@ The project aims to achieve the following business goals:
 ## Apex Code
 
 ### Schedulable Class for Payment Reminder
+## **Validation Rules**
+
+### **Customer_Main__c Object:**
+1. **Email Format Validator**: Ensures that the Email__c field contains a valid email format.
+2. **Phone Number Validator**: Ensures that the Phone_Number__c contains only numeric values.
+
+### **Booking__c Object**
+1. **End Date Validator**: Ensures that the `End_Date__c` cannot be before the `Start_Date__c`.
+2. **Payment Status Validator**: Ensures that the `Payment_Status__c` cannot be "Paid" unless a `Payment_Date__c` is provided.
+3. **Booking Date Validator**: Ensures that the `Booking_Date__c` is not in the future.
+
+### **Bike__c Object**
+1. **Mileage Validator**: Ensures that `Mileage__c` cannot be negative.
+2. **Rental Price Validator**: Ensures that `Rental_Price_per_Day__c` is greater than zero.
+
+### **Billing__c Object**
+1. **Payment Date Validator**: Ensures that the `Payment_Date__c` cannot be before the `Booking_Date__c`.
+2. **Total Amount Validator**: Ensures that `Total_Rental_Amount_Input_c__c` is greater than zero.
+3. **Payment Status Validator**: Ensures that the `Payment_Status__c` cannot be "Paid" if `Payment_Date__c` is empty.
+
+## **Testing and Validation**
+
+The project has been thoroughly tested through:
+- **Unit Testing**: Apex classes and triggers have been unit tested to ensure functionality.
+- **User Interface Testing**: Manual and automated tests have been conducted on the UI to ensure smooth customer interactions, including the registration and booking flows.
+
+## **Key Scenarios Addressed by Salesforce**
+
+- Efficient handling of customer data through Lookup fields and custom objects.
+- Automated billing calculation based on rental durations and payment statuses.
+- Notifications sent automatically to customers when a payment is overdue.
+- Streamlined process for renting bikes, updating vehicle status, and returning bikes, reducing administrative effort.
+
 
 ## **Documentation**
 
