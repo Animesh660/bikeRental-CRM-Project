@@ -59,3 +59,16 @@ public class RemindUnpaidBookings implements Schedulable {
         }
     }
 }
+## **Documentation**
+
+For a detailed description of the project, including objectives, key features, and testing, refer to the project documentation:
+📝 [Project Documentation](https://docs.google.com/document/d/1TyrPFRIoOUUMTyI9OVQoiTj7Tw0UHjPtWvVJWdfftco/edit?usp=sharing)
+
+## **Video Link**
+For a detailed demonstration video click here: 🎥 [Video Demo](https://drive.google.com/file/d/1OERC1AkxQZA68Wwx7L8YcdI3GKTH4C52/view?usp=sharing)
+
+---
+
+Feel free to explore the project and contribute if you'd like to enhance its features or improve the functionality!
+
+---
